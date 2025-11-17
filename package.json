@@ -4,8 +4,14 @@
   "description": "Trabalho de conclusão da disciplina de integração continua",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:allure":"npx cypress run && allure serve allure-results"
+    "cy:run":"cypress run --config video=false --env allure=true",
+    "allure:generate":"allure generate allure-results",
+    "allure:report":"allure open allure-reports",
+    "allure:clear":"rm -r allure-results/ allure-report || true",
+    "cy:allure":"npx cypress run --config video=false --env allure=true && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "author": "Aurelio, Bruno",
   "license": "ISC",
