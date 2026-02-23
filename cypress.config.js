@@ -4,7 +4,7 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
   viewportHeight: 768,
   viewportWidth: 1920,
-  // reporter: "cypress-mochawesome-reporter",
+  reporter: "cypress-mochawesome-reporter",
   e2e: {
     defaultCommandTimeout: 5000,
     baseUrl: "https://automationexercise.com/",
